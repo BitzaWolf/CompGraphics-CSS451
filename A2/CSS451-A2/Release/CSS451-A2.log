@@ -1,0 +1,17 @@
+﻿Build started 1/2/2016 2:23:51 PM.
+     1>Project "C:\Users\Wolf\documents\visual studio 2013\Projects\CSS451-A2\CSS451-A2\CSS451-A2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\sfml\include /I..\sfgui\include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GLShapes.cpp
+         GLShapes.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Wolf\documents\visual studio 2013\Projects\CSS451-A2\Release\CSS451-A2.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:../sfml/lib /LIBPATH:../sfgui/lib "sfml-graphics.lib" "sfml-window.lib" "sfml-system.lib" sfgui.lib OpenGL32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Wolf\documents\visual studio 2013\Projects\CSS451-A2\Release\CSS451-A2.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Wolf\documents\visual studio 2013\Projects\CSS451-A2\Release\CSS451-A2.lib" /MACHINE:X86 /SAFESEH "Release\CSS451-A2.obj"
+         Release\GLShapes.obj
+         Release\stdafx.obj
+         Generating code
+         Finished generating code
+         CSS451-A2.vcxproj -> C:\Users\Wolf\documents\visual studio 2013\Projects\CSS451-A2\Release\CSS451-A2.exe
+     1>Done Building Project "C:\Users\Wolf\documents\visual studio 2013\Projects\CSS451-A2\CSS451-A2\CSS451-A2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.38
