@@ -8,9 +8,5 @@ int main()
 {
 	GLShapes app;
 	app.run();
-
 	return 0;
 }
-
-
-
