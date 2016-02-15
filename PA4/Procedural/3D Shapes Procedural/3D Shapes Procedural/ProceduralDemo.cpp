@@ -2,7 +2,7 @@
 
 using namespace sf;
 
-const Int32 ProceduralDemo::TIME_BETWEEN_SHAPES = 150;
+const Int32 ProceduralDemo::TIME_BETWEEN_SHAPES = 100;
 const float ProceduralDemo::SPAWN_MOVE_SPEED = 5.0f / 1000;
 
 ProceduralDemo::ProceduralDemo()
@@ -10,7 +10,8 @@ ProceduralDemo::ProceduralDemo()
 	renderWindow = new RenderWindow(VideoMode(800, 600), "3D Procedural Demo");
 
 	// initialize OpenGL States
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	//glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(0, 0, 0, 1.0f);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LEQUAL);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -24,7 +25,7 @@ ProceduralDemo::ProceduralDemo()
 	spawnPosition.x = 0;
 	spawnPosition.y = 0;
 	spawnPosition.z = -50;
-	tempFlipper = 1;
+	theta = 0;
 }
 
 
@@ -56,13 +57,9 @@ void ProceduralDemo::run()
 		}
 
 		// update spawn position
-		float distanceMoved = SPAWN_MOVE_SPEED * elapsedTime.asMilliseconds();
-		float dx = static_cast <float> (rand()) / RAND_MAX;
-		spawnPosition.x += dx * distanceMoved * tempFlipper;
-		if (spawnPosition.x >= 2 || spawnPosition.x <= -2)
-		{
-			tempFlipper *= -1;
-		}
+		theta += (90 / 2000.0f) * elapsedTime.asMilliseconds();
+		spawnPosition.y = sin(theta * 3.14159265 / 180) * 5;
+		spawnPosition.x = cos(theta * 3.14159265 / 180) * 7;
 
 		nextShapeTimer -= elapsedTime.asMilliseconds();
 		if (nextShapeTimer <= 0)

@@ -29,7 +29,7 @@ private:
 	std::vector<ProceduralShape*> shapes;
 	sf::Int32 nextShapeTimer;
 	sf::Vector3<float> spawnPosition;
-	float tempFlipper;
+	float theta;
 
 	void drawPyramid();
 };
