@@ -42,6 +42,11 @@ ProceduralShape::ProceduralShape(const float &x, const float &y, const float &z)
 
 ProceduralShape::~ProceduralShape() { }
 
+/*
+Move this square closer to the screen at a fixed speed based on the time
+elapsed since this function was last called. This should be called every
+frame.
+*/
 void ProceduralShape::update(const sf::Int32 &time)
 {
 	float zTranslation = SPEED * time;
@@ -69,6 +74,7 @@ void ProceduralShape::draw() const
 	glEnd();
 }
 
+/* Returns true if this square is behind the near clipping plane.*/
 bool ProceduralShape::pastScreen() const
 {
 	return (center.z >= 0);

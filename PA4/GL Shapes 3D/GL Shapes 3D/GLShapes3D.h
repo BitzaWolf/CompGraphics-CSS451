@@ -1,3 +1,7 @@
+/*
+This is the main demo class for the entire demonstration. Handles input,
+GUI, and drawing the shapes to the screen.
+*/
 #pragma once
 
 #include "SFML/Graphics.hpp"
@@ -13,6 +17,10 @@
 #include "SFGUI/RadioButtonGroup.hpp"
 #include "SFGUI/Scale.hpp"
 #include "SFGUI/Window.hpp"
+
+#include "shapes/Cube.h"
+#include "shapes/Sphere.h"
+#include "shapes/Diamond.h"
 
 #include <vector>
 #include <gl\GLU.h>
@@ -33,23 +41,28 @@ private:
 	sfg::Window::Ptr window;
 	sfg::RadioButtonGroup::Ptr radioButtGroup;
 	sfg::Button::Ptr button_clear;
-	sfg::RadioButton::Ptr radiobutt_Square;
-	sfg::RadioButton::Ptr radiobutt_Circle;
-	sfg::RadioButton::Ptr radiobutt_Triangle;
-	sfg::Scale::Ptr slider_Red;
-	sfg::Scale::Ptr slider_Green;
-	sfg::Scale::Ptr slider_Blue;
+	sfg::RadioButton::Ptr radiobutt_Cube;
+	sfg::RadioButton::Ptr radiobutt_Sphere;
+	sfg::RadioButton::Ptr radiobutt_Diamond;
+	sfg::Scale::Ptr slider_x;
+	sfg::Scale::Ptr slider_y;
+	sfg::Scale::Ptr slider_z;
+	sfg::Scale::Ptr slider_rotX;
+	sfg::Scale::Ptr slider_rotY;
+	sfg::Scale::Ptr slider_rotZ;
 
 	// SFML Elements
 	sf::RenderWindow* renderWindow;
 	sf::Clock clock;
 
 	// GL Shapes data
-	std::vector<sf::Shape*> shapes;
+	std::vector<glshapes::Shape*> shapes;
 
 	// Event functions
 	void onButtonClick();
 	void onMouseClick(sf::Event &event);
+	void transSlider();
+	void rotSlider();
 
 	// Utility functions
 	void deleteShapes();

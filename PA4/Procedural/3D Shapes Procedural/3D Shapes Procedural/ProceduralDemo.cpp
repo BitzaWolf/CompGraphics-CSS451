@@ -56,11 +56,12 @@ void ProceduralDemo::run()
 			}
 		}
 
-		// update spawn position
+		// update spawn position of new squares
 		theta += (90 / 2000.0f) * elapsedTime.asMilliseconds();
 		spawnPosition.y = sin(theta * 3.14159265 / 180) * 5;
 		spawnPosition.x = cos(theta * 3.14159265 / 180) * 7;
 
+		// Countdown time left until the next square is spawned.
 		nextShapeTimer -= elapsedTime.asMilliseconds();
 		if (nextShapeTimer <= 0)
 		{
@@ -77,11 +78,13 @@ void ProceduralDemo::run()
 		{
 			if (shape != NULL)
 			{
+				// Move the squares closer to the screen.
 				shape->update(elapsedTime.asMilliseconds());
 				shape->draw();
 			}
 		}
 
+		// Delete squares that have passed through the screen.
 		for (int i = 0; i < shapes.size(); ++i)
 		{
 			ProceduralShape *shape = shapes.at(i);
@@ -93,6 +96,6 @@ void ProceduralDemo::run()
 		}
 
 		renderWindow->display();
-		sleep(milliseconds(8));
+		sleep(milliseconds(8)); // Limit the CPU from overworking.
 	}
 }

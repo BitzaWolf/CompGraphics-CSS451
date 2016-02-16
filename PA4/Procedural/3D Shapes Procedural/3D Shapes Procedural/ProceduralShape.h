@@ -1,3 +1,7 @@
+/*
+Represents a square shape that will be drawn to the screen.
+*/
+
 #pragma once
 
 #include "SFML/Graphics.hpp"
